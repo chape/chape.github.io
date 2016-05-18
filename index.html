@@ -224,7 +224,43 @@
     
 
     <div id="content">
-        <p>这是我的第一篇博客</p>
+        <p><p>这是我的第一篇博客,先尿个尿标记下如何使用git pages创建这个个人博客吧，^_^
+</p>
+操作环境：
+<ul>
+<ol>mac OSX </ol>
+</ul>
+工具：
+<ul>
+<ol>iTerm</ol>
+<ol>git</ol>
+<ol>Hugo</ol>
+</ul>
+前期准备：
+<ul>
+<ol>github账户</ol>
+<ol>brew包管理</ol>
+</ul>
+开始：</br>
+第一步，使用brew安装hugo,<code>brew install hugo</code>,然后使用hugo命令<code>hugo new site YOUR_LOCAL_DIR</code>,运行后YOUR_LOCAL_DIR下会产生如下目录结构：
+  <ol>archetypes</ol>
+  <ol>content</ol>
+  <ol>layouts</ol>
+  <ol>static</ol>
+  <ol>config.toml</ol>
+<p>archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。</p>
+进入YOUR_LOCAL_DIR目录,<code>cd YOUR_LOCAL_DIR</code>，创建博客MD文件，<code>hugo new post/first_post.md</code>,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。
+还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录<code>mkdir themes</code>,进入themes目录，下载一个你喜欢的主题<code>git clone <a href="https://github.com/jpescador/hugo-future-imperfect.git">https://github.com/jpescador/hugo-future-imperfect.git</a></code>,主题皮肤列表（<a href="https://github.com/spf13/hugoThemes">点这里</a>）,开启本地调试模式<code>hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch</code>，然后在运行<code>hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;<a href="http://YOUR_GITHUB_ACCOUNT.github.io/&quot;">http://YOUR_GITHUB_ACCOUNT.github.io/&quot;</a></code>,这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。</br>
+好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为<code>YOUR_GITHUB_ACCOUNT.github.io</code>,进入public目录，执行如下git命令：</br>
+<code>
+git init<br>
+git remote add origin <a href="https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git">https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git</a></br>
+git add -A</br>
+git commit -m &ldquo;first commit&rdquo;</br>
+git push -u origin master</code>.
+好了,到此你就可以访问<a><a href="http://YOUR_GITHUB_ACCOUNT.github.io">http://YOUR_GITHUB_ACCOUNT.github.io</a></a>.
+如果想添加新的博客，则重复在YOUR_LOCAL_DIR目录运行<code>hugo new post/second_post.md<br>hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;<a href="http://chape.github.io/&quot;">http://chape.github.io/&quot;</a><br>
+</code>然后进入public目录的git repo提交修改到github即可。打完收工！</p>
 
     </div>
 
