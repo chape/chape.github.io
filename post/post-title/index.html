@@ -30,12 +30,12 @@
 
 
 <meta name="twitter:title" content="记录我的博客"/>
-<meta name="twitter:description" content="这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^ 准备 操作环境: mac OSX 工具： iTerm git Hugo brew 账户： github账户 开始： 安装Hugo 使用brew安装hugo,brew install hugo 初始化本地站点 使用hugo命令hugo new site YOUR_LOCAL_DIR,运行后YOUR_LOCAL_DIR下会产生如下目录结构： archetypes content layouts static config.toml 目录解析 archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。进入YOUR_LOCAL_DIR目录,cd YOUR_LOCAL_DIR，创建博客MD文件，hugo new post/first_post.md,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。 获取主题 还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录mkdir themes,进入themes目录，下载一个你喜欢的主题 git clone https://github.com/jpescador/hugo-future-imperfect.git 主题皮肤列表（点这里）,开启本地调试模式(方便预览与调试) hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch 编译并产生博客静态资源 hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;http://YOUR_GITHUB_ACCOUNT.github.io/&quot; 这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。 提交至Github 好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为YOUR_GITHUB_ACCOUNT.github.io,进入public目录，执行如下git命令： git init git remote add origin https://github.com/YOUR\_GITHUB\_ACCOUNT/YOUR\_GITHUB\_ACCOUNT.github.io.git git add -A git commit -m &quot;first commit&quot; git push -u origin master 嗯,到此你就可以访问http://YOUR_GITHUB_ACCOUNT.github.io."/>
+<meta name="twitter:description" content="这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^ 准备 操作环境: mac OSX 工具： iTerm git Hugo brew 账户： github账户 开始： 安装Hugo 使用brew安装hugo,brew install hugo 初始化本地站点 使用hugo命令hugo new site YOUR_LOCAL_DIR,运行后YOUR_LOCAL_DIR下会产生如下目录结构： archetypes content layouts static config.toml 目录解析 archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。进入YOUR_LOCAL_DIR目录,cd YOUR_LOCAL_DIR，创建博客MD文件，hugo new post/first_post.md,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。 获取主题 还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录mkdir themes,进入themes目录，下载一个你喜欢的主题 git clone https://github.com/jpescador/hugo-future-imperfect.git 主题皮肤列表（点这里）,开启本地调试模式(方便预览与调试) hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch 编译并产生博客静态资源 hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;http://YOUR_GITHUB_ACCOUNT.github.io/&quot; 这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。 提交至Github 好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为YOUR_GITHUB_ACCOUNT.github.io,进入public目录，执行如下git命令： git init git remote add origin https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git git add -A git commit -m &quot;first commit&quot; git push -u origin master 嗯,到此你就可以访问http://YOUR_GITHUB_ACCOUNT.github.io."/>
 
 
 
         <meta property="og:title" content="记录我的博客" />
-<meta property="og:description" content="这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^ 准备 操作环境: mac OSX 工具： iTerm git Hugo brew 账户： github账户 开始： 安装Hugo 使用brew安装hugo,brew install hugo 初始化本地站点 使用hugo命令hugo new site YOUR_LOCAL_DIR,运行后YOUR_LOCAL_DIR下会产生如下目录结构： archetypes content layouts static config.toml 目录解析 archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。进入YOUR_LOCAL_DIR目录,cd YOUR_LOCAL_DIR，创建博客MD文件，hugo new post/first_post.md,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。 获取主题 还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录mkdir themes,进入themes目录，下载一个你喜欢的主题 git clone https://github.com/jpescador/hugo-future-imperfect.git 主题皮肤列表（点这里）,开启本地调试模式(方便预览与调试) hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch 编译并产生博客静态资源 hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;http://YOUR_GITHUB_ACCOUNT.github.io/&quot; 这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。 提交至Github 好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为YOUR_GITHUB_ACCOUNT.github.io,进入public目录，执行如下git命令： git init git remote add origin https://github.com/YOUR\_GITHUB\_ACCOUNT/YOUR\_GITHUB\_ACCOUNT.github.io.git git add -A git commit -m &quot;first commit&quot; git push -u origin master 嗯,到此你就可以访问http://YOUR_GITHUB_ACCOUNT.github.io." />
+<meta property="og:description" content="这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^ 准备 操作环境: mac OSX 工具： iTerm git Hugo brew 账户： github账户 开始： 安装Hugo 使用brew安装hugo,brew install hugo 初始化本地站点 使用hugo命令hugo new site YOUR_LOCAL_DIR,运行后YOUR_LOCAL_DIR下会产生如下目录结构： archetypes content layouts static config.toml 目录解析 archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。进入YOUR_LOCAL_DIR目录,cd YOUR_LOCAL_DIR，创建博客MD文件，hugo new post/first_post.md,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。 获取主题 还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录mkdir themes,进入themes目录，下载一个你喜欢的主题 git clone https://github.com/jpescador/hugo-future-imperfect.git 主题皮肤列表（点这里）,开启本地调试模式(方便预览与调试) hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch 编译并产生博客静态资源 hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;http://YOUR_GITHUB_ACCOUNT.github.io/&quot; 这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。 提交至Github 好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为YOUR_GITHUB_ACCOUNT.github.io,进入public目录，执行如下git命令： git init git remote add origin https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git git add -A git commit -m &quot;first commit&quot; git push -u origin master 嗯,到此你就可以访问http://YOUR_GITHUB_ACCOUNT.github.io." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://chape.github.io/post/post-title/" />
 
@@ -53,7 +53,7 @@
 
         
 <meta itemprop="name" content="记录我的博客">
-<meta itemprop="description" content="这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^ 准备 操作环境: mac OSX 工具： iTerm git Hugo brew 账户： github账户 开始： 安装Hugo 使用brew安装hugo,brew install hugo 初始化本地站点 使用hugo命令hugo new site YOUR_LOCAL_DIR,运行后YOUR_LOCAL_DIR下会产生如下目录结构： archetypes content layouts static config.toml 目录解析 archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。进入YOUR_LOCAL_DIR目录,cd YOUR_LOCAL_DIR，创建博客MD文件，hugo new post/first_post.md,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。 获取主题 还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录mkdir themes,进入themes目录，下载一个你喜欢的主题 git clone https://github.com/jpescador/hugo-future-imperfect.git 主题皮肤列表（点这里）,开启本地调试模式(方便预览与调试) hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch 编译并产生博客静态资源 hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;http://YOUR_GITHUB_ACCOUNT.github.io/&quot; 这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。 提交至Github 好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为YOUR_GITHUB_ACCOUNT.github.io,进入public目录，执行如下git命令： git init git remote add origin https://github.com/YOUR\_GITHUB\_ACCOUNT/YOUR\_GITHUB\_ACCOUNT.github.io.git git add -A git commit -m &quot;first commit&quot; git push -u origin master 嗯,到此你就可以访问http://YOUR_GITHUB_ACCOUNT.github.io.">
+<meta itemprop="description" content="这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^ 准备 操作环境: mac OSX 工具： iTerm git Hugo brew 账户： github账户 开始： 安装Hugo 使用brew安装hugo,brew install hugo 初始化本地站点 使用hugo命令hugo new site YOUR_LOCAL_DIR,运行后YOUR_LOCAL_DIR下会产生如下目录结构： archetypes content layouts static config.toml 目录解析 archetypes目录还母鸡这个是用来干嘛的，和maven脚手架应该差不多，简化创建过程用的吧。content目录存放markdown文章，layouts目录存放网站的布局模板文件，static目录里放的是一些图片、css、js等资源。进入YOUR_LOCAL_DIR目录,cd YOUR_LOCAL_DIR，创建博客MD文件，hugo new post/first_post.md,之后在content/post目录会生成一个MarkDown格式的first_post.md文件。 获取主题 还是在YOUR_LOCAL_DIR目录下，创建一个存放主题的themes目录mkdir themes,进入themes目录，下载一个你喜欢的主题 git clone https://github.com/jpescador/hugo-future-imperfect.git 主题皮肤列表（点这里）,开启本地调试模式(方便预览与调试) hugo server &ndash;theme=hugo-future-imperfect &ndash;buildDrafts &ndash;watch 编译并产生博客静态资源 hugo &ndash;theme=hugo-future-imperfect &ndash;baseUrl=&ldquo;http://YOUR_GITHUB_ACCOUNT.github.io/&quot; 这样目录会产生public目录和下面各种js、css、html静态资源，这些就是我们博客网站展现的资源，即后面要上传到github的东东。 提交至Github 好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为YOUR_GITHUB_ACCOUNT.github.io,进入public目录，执行如下git命令： git init git remote add origin https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git git add -A git commit -m &quot;first commit&quot; git push -u origin master 嗯,到此你就可以访问http://YOUR_GITHUB_ACCOUNT.github.io.">
 
 
 <meta itemprop="dateModified" content="2016-05-18T14:45:27&#43;08:00" />
@@ -61,7 +61,7 @@
 
 
 
-<meta itemprop="keywords" content="其它,blog,git," />
+<meta itemprop="keywords" content="其它,blog,git,weixin," />
 
         
 
@@ -155,6 +155,10 @@
                     
                 
 
+                
+                    <li>
+                        <a href="http://chape.github.io/post/post-title/"><p>微信支付</p></a>
+                    </li>
                 
                     <li>
                         <a href="http://chape.github.io/post/post-title/"><p>记录我的博客</p></a>
@@ -278,7 +282,7 @@
 <p>好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为<code>YOUR_GITHUB_ACCOUNT.github.io</code>,进入public目录，执行如下git命令：</p>
 
 <pre><code>git init
-git remote add origin https://github.com/YOUR\_GITHUB\_ACCOUNT/YOUR\_GITHUB\_ACCOUNT.github.io.git
+git remote add origin https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git
 git add -A
 git commit -m &quot;first commit&quot;
 git push -u origin master
@@ -290,7 +294,7 @@ git push -u origin master
 
 <p>如果想添加新的博客，则重复在YOUR_LOCAL_DIR目录运行</p>
 
-<pre><code>hugo new post/second\_post.md&lt;/code&gt;
+<pre><code>hugo new post/second_post.md
 hugo 
 </code></pre>
 
@@ -314,6 +318,9 @@ hugo
 <ul class="actions pagination">
     
 
+    
+        <li><a href="http://chape.github.io/post/post-title/"
+                class="button big next">微信支付</a></li>
     
 </ul>
 
@@ -373,6 +380,20 @@ hugo
                     <li>
                         <article>
                             <header>
+                                <h3><a href="http://chape.github.io/post/post-title/">微信支付</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2016-06-03'>
+                                    June 3, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="http://chape.github.io/post/post-title/">记录我的博客</a></h3>
                                 
                                     
@@ -408,7 +429,7 @@ hugo
                         <article>
                             <header>
                                 <a href="http://chape.github.io/categories/%E5%85%B6%E5%AE%83/">其它</a>
-                                <span style="float:right;">1</span>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>

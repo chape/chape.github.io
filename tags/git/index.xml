@@ -80,7 +80,7 @@
 &lt;p&gt;好了，终于到了github登场了。在github上创建一个存放你的博客内容的仓库,取名为&lt;code&gt;YOUR_GITHUB_ACCOUNT.github.io&lt;/code&gt;,进入public目录，执行如下git命令：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
-git remote add origin https://github.com/YOUR\_GITHUB\_ACCOUNT/YOUR\_GITHUB\_ACCOUNT.github.io.git
+git remote add origin https://github.com/YOUR_GITHUB_ACCOUNT/YOUR_GITHUB_ACCOUNT.github.io.git
 git add -A
 git commit -m &amp;quot;first commit&amp;quot;
 git push -u origin master
@@ -92,7 +92,7 @@ git push -u origin master
 
 &lt;p&gt;如果想添加新的博客，则重复在YOUR_LOCAL_DIR目录运行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;hugo new post/second\_post.md&amp;lt;/code&amp;gt;
+&lt;pre&gt;&lt;code&gt;hugo new post/second_post.md
 hugo 
 &lt;/code&gt;&lt;/pre&gt;
 

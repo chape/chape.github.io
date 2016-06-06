@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://chape.github.io/tags/blog/" />
 
 
-<meta property="og:updated_time" content="2016-05-18T14:45:27&#43;08:00"/>
+<meta property="og:updated_time" content="2016-06-03T14:45:27&#43;08:00"/>
 
 
 
@@ -138,6 +138,10 @@
 
                 
                     <li>
+                        <a href="http://chape.github.io/post/post-title/"><p>微信支付</p></a>
+                    </li>
+                
+                    <li>
                         <a href="http://chape.github.io/post/post-title/"><p>记录我的博客</p></a>
                     </li>
                 
@@ -154,6 +158,48 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://chape.github.io/post/post-title/">微信支付</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-06-03'>
+            June 3, 2016</time>
+        <span class="author">chape</span>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>最近产品需求在App中添加微信支付功能，网上也有不少资料，但都太杂了，这里将服务端具体实现流程与踩的坑记录下来，便于以后查阅^_^ 前言 参考文献: 微信支付开发文档 微信公众平台支付接口调试工具 GitHub WxPay参考库 利用SSH反向通道在本地调试微信公共号 开始： 微信支付交互时序图 根据官方提供的时序图，我们需要明确后端需要提供三个接口: 预下单接口（与客户端交互） 微信回调接口（与微信服务器交互） 支付查询接口（与客户端交互） 预下单接口 比如我们可以命名为：<a href="http://xxx.com/weixinpay/preOrder">http://xxx.com/weixinpay/preOrder</a> headerParam 用户ip headerParam 用户access_token formParam 充值商品id 业务步骤： 生成本地系统订单号out_trade_no 组装待提交给微信统一下单API所需的数据(微信应用号app_id,商户号mch_id,微信回调notify_url,商品详情body,本地商户订单号out_trade_no,支付金额total_fee,用户ip spbill_create_ip,支付类型trade_type NATIVE/APP/JSAPI/WAP)，并根据前面的数据生成签名sign,最后组装为XML提交给微信统一下单API 请求微信统一下单接口并组织返回结果数据(XML) 根据结果数据组织客户端协商定义的数据格式，并序列化传给客户端(先检查数据结果中签名与本地签名是否一致，根据微信应用号app_id,时间戳time_stamp,随机字符串nonce_str,预付订单号prepay_id,签名方式sign_type,产生签名sign，最后序列化到客户端) 微信回调接口 用户支付后，微信服务器将调用此接口notify_url,本接口只与微信交互，consumes和produces均使用application/xml,本人使用org.jboss.resteasy:resteasy-jaxb-provider:2.2.0.GA将XML数据直接转换为javabean。 比如我们可以命名为：<a href="http://xxx.com/weixinpay/callback">http://xxx.com/weixinpay/callback</a> 业务步骤： 根据微信传递的请求数据生成签名，并校验来自微信的签名 根据微信回调支付结果修改本地订单号out_trade_no状态 返回微信服务器xml信息 查询订单接口 客户端传递本地订单号outTradeNo或微信订单号transaction_id查询订单状态 比如我们可以命名为：<a href="http://xxx.com/weixinpay/order">http://xxx.com/weixinpay/order</a> queryParam out_trade_no queryParam 微信订单流水号transaction_id 业务步骤： 获取客户端订单号，根据微信app_id,商户mch_id,本地订单号outTradeNo或微信订单号transaction_id,随机字符串nonce_str,计算签名sign POST请求，提交第一步的XML数据至微信查询订单API 获取响应数据，校验签名，并比对本地订单状态，返回客户端订单状态 注意事项 字段需按照字母顺序，除去sign字段，并且最后加上key=API_KEY使用MD5签名,可以比对微信公众平台支付接口调试工具验证签名正确性。 本地机器做回调测试时，一般没有公网ip，可以使用在公网机器反向代理到本地ssh -R :[10001]:[localhost]:[8001] root@[公网ip] -i ~/.ssh/pub_rsa,其它测试方式可参考利用SSH反向通道在本地调试微信公共号 微信接口： 微信统一下单APIhttps://api.mch.weixin.qq.com/pay/unifiedorder 微信查询订单APIhttps://api.mch.weixin.qq.com/pay/orderquery</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://chape.github.io/post/post-title/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+    </footer>
+</article>
 
         
             <article class="post">
@@ -246,6 +292,20 @@
                     <li>
                         <article>
                             <header>
+                                <h3><a href="http://chape.github.io/post/post-title/">微信支付</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2016-06-03'>
+                                    June 3, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="http://chape.github.io/post/post-title/">记录我的博客</a></h3>
                                 
                                     
@@ -281,7 +341,7 @@
                         <article>
                             <header>
                                 <a href="http://chape.github.io/categories/%E5%85%B6%E5%AE%83/">其它</a>
-                                <span style="float:right;">1</span>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
