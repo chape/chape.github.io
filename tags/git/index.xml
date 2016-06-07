@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Single Code Dog </title>
-    <link>aseUrl=http:/chape.github.io/tags/git/</link>
+    <title>Git on My Awesome Site</title>
+    <link>http://chape.github.io/tags/git/</link>
+    <description>Recent content in Git on My Awesome Site</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author></author>
-    <rights>(C) 2016</rights>
-    <updated>2016-05-18 14:45:27 &#43;0800 CST</updated>
-
+    <lastBuildDate>Wed, 18 May 2016 14:45:27 +0800</lastBuildDate>
+    <atom:link href="http://chape.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>记录我的博客</title>
+      <link>http://chape.github.io/post/post-title/</link>
+      <pubDate>Wed, 18 May 2016 14:45:27 +0800</pubDate>
       
-        <item>
-          <title>记录我的博客</title>
-          <link>/aseUrl=http:/chape.github.io/post/post-title/</link>
-          <pubDate>Wed, 18 May 2016 14:45:27 CST</pubDate>
-          <author></author>
-          <guid>/aseUrl=http:/chape.github.io/post/post-title/</guid>
-          <description>
+      <guid>http://chape.github.io/post/post-title/</guid>
+      <description>
 
 &lt;p&gt;这是我的第一篇博客,先尿个尿标记下如何使用git pages创建个人博客吧，^_^&lt;/p&gt;
 
@@ -100,9 +99,7 @@ hugo
 
 &lt;p&gt;打完收工！&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>
