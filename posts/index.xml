@@ -21,9 +21,9 @@
 &lt;p&gt;最近产品需求在App中添加微信支付功能，网上也有不少资料，但都太杂了，这里将服务端具体实现流程与踩的坑记录下来，便于以后查阅^_^&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1 id=&#34;前言:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;前言&lt;/h1&gt;
+&lt;h1 id=&#34;前言:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;前言&lt;/h1&gt;
 
-&lt;h3 id=&#34;参考文献:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;参考文献:&lt;/h3&gt;
+&lt;h3 id=&#34;参考文献:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;参考文献:&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_3&#34;&gt;微信支付开发文档&lt;/a&gt;&lt;/li&gt;
@@ -32,9 +32,9 @@
 &lt;li&gt;&lt;a href=&#34;http://magicly.me/2015/07/26/ssh-reverse-tunnel-wx-local/&#34;&gt;利用SSH反向通道在本地调试微信公共号&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;开始:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;开始：&lt;/h1&gt;
+&lt;h1 id=&#34;开始:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;开始：&lt;/h1&gt;
 
-&lt;h3 id=&#34;微信支付交互时序图:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;微信支付交互时序图&lt;/h3&gt;
+&lt;h3 id=&#34;微信支付交互时序图:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;微信支付交互时序图&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://pay.weixin.qq.com/wiki/doc/api/img/chapter8_3_1.png&#34; alt=&#34;微信支付交互时序图&#34; /&gt;&lt;/p&gt;
 
@@ -46,7 +46,7 @@
 &lt;li&gt;支付查询接口（与客户端交互）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;预下单接口:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;预下单接口&lt;/h3&gt;
+&lt;h3 id=&#34;预下单接口:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;预下单接口&lt;/h3&gt;
 
 &lt;p&gt;比如我们可以命名为：&lt;em&gt;&lt;a href=&#34;http://xxx.com/weixinpay/preOrder&#34;&gt;http://xxx.com/weixinpay/preOrder&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
@@ -65,7 +65,7 @@
 &lt;li&gt;根据结果数据组织客户端协商定义的数据格式，并序列化传给客户端(先检查数据结果中签名与本地签名是否一致，根据微信应用号&lt;code&gt;app_id&lt;/code&gt;,时间戳&lt;code&gt;time_stamp&lt;/code&gt;,随机字符串&lt;code&gt;nonce_str&lt;/code&gt;,预付订单号&lt;code&gt;prepay_id&lt;/code&gt;,签名方式&lt;code&gt;sign_type&lt;/code&gt;,产生签名&lt;code&gt;sign&lt;/code&gt;，最后序列化到客户端)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;微信回调接口:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;微信回调接口&lt;/h3&gt;
+&lt;h3 id=&#34;微信回调接口:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;微信回调接口&lt;/h3&gt;
 
 &lt;p&gt;用户支付后，微信服务器将调用此接口&lt;code&gt;notify_url&lt;/code&gt;,本接口只与微信交互，consumes和produces均使用application/xml,本人使用&lt;code&gt;org.jboss.resteasy:resteasy-jaxb-provider:2.2.0.GA&lt;/code&gt;将XML数据直接转换为javabean。&lt;/p&gt;
 
@@ -79,7 +79,7 @@
 &lt;li&gt;返回微信服务器xml信息&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;查询订单接口:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;查询订单接口&lt;/h3&gt;
+&lt;h3 id=&#34;查询订单接口:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;查询订单接口&lt;/h3&gt;
 
 &lt;p&gt;客户端传递本地订单号&lt;code&gt;outTradeNo&lt;/code&gt;或微信订单号&lt;code&gt;transaction_id&lt;/code&gt;查询订单状态&lt;/p&gt;
 
@@ -98,7 +98,7 @@
 &lt;li&gt;获取响应数据，校验签名，并比对本地订单状态，返回客户端订单状态&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;注意事项:afe97a3c42ed9aeaeeb755ae9e2dca75&#34;&gt;注意事项&lt;/h3&gt;
+&lt;h3 id=&#34;注意事项:2818fa2cdda5c0fa47b221d53463f7c9&#34;&gt;注意事项&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;字段需按照字母顺序，除去sign字段，并且最后加上key=API_KEY使用MD5签名,可以比对&lt;a href=&#34;https://pay.weixin.qq.com/wiki/tools/signverify/&#34;&gt;微信公众平台支付接口调试工具&lt;/a&gt;验证签名正确性。&lt;/li&gt;
