@@ -193,10 +193,11 @@ git push -u origin master
 
 &lt;h3 id=&#34;日常新建博客:f779394c000b834c435e35a4c53a5ecd&#34;&gt;日常新建博客&lt;/h3&gt;
 
-&lt;p&gt;如果想添加新的博客，则重复在YOUR_LOCAL_DIR目录运行&lt;/p&gt;
+&lt;p&gt;如果想添加新的博客，则重复在YOUR_LOCAL_DIR(即content上级目录)目录运行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;hugo new post/second_post.md
+&lt;pre&gt;&lt;code&gt;hugo new posts/second_post.md
 hugo 
+hugo server
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;然后进入public目录的git repo提交修改到github即可。&lt;/p&gt;
