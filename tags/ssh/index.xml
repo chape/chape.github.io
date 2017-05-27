@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on A Single Code Dog</title>
+    <link>http://chape.github.io/tags/ssh/</link>
+    <description>Recent content in Ssh on A Single Code Dog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 May 2017 14:45:27 +0800</lastBuildDate>
+    <atom:link href="http://chape.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>macOS下代替SSH Client GUI方案</title>
+      <link>http://chape.github.io/posts/tool-ssh/</link>
+      <pubDate>Sat, 27 May 2017 14:45:27 +0800</pubDate>
+      
+      <guid>http://chape.github.io/posts/tool-ssh/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;转战macOS后，一直在寻求一款好用的SSH GUI Client。听说ZOC好像不错，用了一段时间，还是能满足日常需求，但是无法完成级联操作(比如登录跳板机后在登录某服务器)。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;sshgo:d5adf6ebab6a4142fa4ce027f11aa10d&#34;&gt;SSHGO&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/kaibozhou/ssh-auto-login-manage&#34;&gt;ssh-auto-login-manage&lt;/a&gt;
+是一个用shell和python编写的sshClient工具，实现ssh免密码自动登录和主机管理功能。&lt;/p&gt;
+
+&lt;h1 id=&#34;安装-配置:d5adf6ebab6a4142fa4ce027f11aa10d&#34;&gt;安装&amp;amp;配置&lt;/h1&gt;
+
+&lt;p&gt;##下载
+下载github工程：&lt;code&gt;git clone https://github.com/flying5/ssh-auto-login-manage.git&lt;/code&gt;
+##配置登录服务器
+添加所需登录的服务器，修改&lt;code&gt;(YOURHOME)/path/to/ssh-auto-login-manage/hosts&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deploy
+    1.1.1.1  user1  password1
+    2.2.2.2  user2  #use Public key authentication
+    3.3.3.3  user3 -i /path/to/id_file.pem  #use id file to login
+Online-1
+    4.4.4.4 user password #跳板机
+    intenal.server # 下面的服务器会以4.4.4.4作为跳板机服务器
+        10.0.2.10 user3 password3
+        10.0.2.11 user4 password4
+Online-2
+    5.5.5.5:22222 user5 password5 #use the special port
+    6.6.6.6 user6 password6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##配置别名
+在&lt;code&gt;~/.zshrc&lt;/code&gt;文件添加如下行：
+&lt;code&gt;alias sshgo=&#39;(YOURHOME)/path/to/ssh-auto-login-manage/sshgo&#39;&lt;/code&gt;
+sshgo配置完成，输入sshgo命令即可！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://okvphnw7f.bkt.clouddn.com/2017052714958617204165.png&#34; alt=&#34;运行sshgo预览&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;iterm2配置lrzsz:d5adf6ebab6a4142fa4ce027f11aa10d&#34;&gt;iTerm2配置lrzsz&lt;/h1&gt;
+
+&lt;p&gt;lrzsz是unix下文件传输的工具，可以跟iTerm2配合使用。
+##安装
+&lt;code&gt;brew install lrzsz&lt;/code&gt;
+##下载脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /usr/local/bin
+sudo wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-send-zmodem.sh
+sudo wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-recv-zmodem.sh
+sudo chmod +x /usr/local/bin/iterm2-*
+sudo chown YOURUSER:YOURGROUP /usr/local/bin/iterm2-*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##配置iTerm2
+打开iTerm2，点击 Preferences &amp;gt; Profiles，选择某个默认的Profile Name，如 Default，之后继续选择 Advanced &amp;gt; Triggers &amp;gt; Edit，添加两个triggers：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Regular expression: rz waiting to receive.\*\*B0100
+Action: Run Silent Coprocess
+Parameters: /usr/local/bin/iterm2-send-zmodem.sh
+Instant: checked
+
+Regular expression: \*\*B00000000000000
+Action: Run Silent Coprocess
+Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
+Instant: checked
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如图：
+&lt;img src=&#34;http://okvphnw7f.bkt.clouddn.com/20170527149586092688284.png&#34; alt=&#34;配置trigger&#34; /&gt;
+#使用
+使用sshgo选择你要登录的服务器，最后就可以使用sz 、rz命令保存和上传文件了。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
